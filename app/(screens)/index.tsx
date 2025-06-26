@@ -1,5 +1,5 @@
-import ColorPicker from '@/components/ColorPicker'
 import Ring from '@/components/Ring'
+import TabView from '@/components/TabView'
 import React, { useEffect, useState } from 'react'
 import { View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -9,7 +9,6 @@ export default function index() {
   const getPixels = async () => {
     const pixels = await fetch('http://192.168.1.7/current')
     const data = await pixels.json()
-    console.log(data.led_colors)
     setPixels(data.led_colors)
   }
 
@@ -18,10 +17,12 @@ export default function index() {
   }, [])
 
   return (
-    <SafeAreaView className='flex-1 bg-zinc-950 justify-center items-center p-4'>
-      <View className='flex items-center justify-between flex-col bg-green-500 w-full h-full'>
-        <Ring pixels={pixels} />
-        <ColorPicker />
+    <SafeAreaView className='flex-1 bg-zinc-950 justify-between items-center p-4'>
+      <View className='flex-1 gap-10 w-full'>
+        <View className='w-full items-center'>
+          <Ring pixels={pixels} />
+        </View>
+        <TabView onUpdate={getPixels} />
       </View>
     </SafeAreaView>
   )
