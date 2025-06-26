@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "GPixel-native",
+    "name": "GPixel",
     "slug": "GPixel-native",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -38,6 +38,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "9131ab83-4dda-4100-86ef-2c0af9412071"
+      }
+    },
+    "owner": "gweepcreative"
   }
 }
