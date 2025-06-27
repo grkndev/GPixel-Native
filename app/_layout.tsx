@@ -18,12 +18,12 @@ export default function RootLayout() {
   }
 
   return (
-    <React.Fragment>
+    <>
       <Stack>
         <Stack.Screen name="(screens)/index" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
-    </React.Fragment>
+    </>
   );
 }
